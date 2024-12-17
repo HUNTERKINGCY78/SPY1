@@ -3,9 +3,9 @@ import glob
 import time
 import sys
 
-GREEN = "\033[92m"  # Зеленый цвет текста
-WHITE = "\033[97m"  # Белый цвет текста
-RESET = "\033[0m"   # Сброс цветового оформления
+GREEN = "\033[92m"  # Warna teks hijau
+WHITE = "\033[97m"  # Warna teks putih
+RESET = "\033[0m"   # Atur ulang skema warna
 
 text_formats = ['.csv', '.txt', '.sql', '.xlsx', '.json', '.log']
 
@@ -65,8 +65,8 @@ def search_in_base_folder(value):
         db_files.extend(glob.glob(os.path.join(base_directory, '*' + ext)))
 
     try:
-        with open('результаты_поиска.txt', 'w', encoding='utf-8') as f:
-            f.write('Поисковой запрос: ' + value + '\n')
+        with open('hasil_penelusuran.txt', 'w', encoding='utf-8') as f:
+            f.write('Permintaan pencarian: ' + value + '\n')
             for db in db_files:
                 found_results = dbsearch(db, value)
 
@@ -86,17 +86,17 @@ def search_in_base_folder(value):
         elapsed_time = end_time - start_time
 
         summary_text = f'\n╭━━━━━━━━━━━━━━━━━━━━━━━━━\n' \
-                       f'| Всего найдено результатов: {len(all_found_results)}\n' \
-                       f'| Затраченное время: {elapsed_time:.2f} секунд\n' \
+                       f'| Hasil total ditemukan: {len(all_found_results)}\n' \
+                       f'| Waktu yang dihabiskan: {elapsed_time:.2f} секунд\n' \
                        f'╰━━━━━━━━━━━━━━━━━━━━━━━━━\n'
 
         slow_print(summary_text, interval=0.01)
 
 def main():
-    slow_print(f"{GREEN}Введите поисковой запрос: {RESET}\n", interval=0.01)
+    slow_print(f"{GREEN}Masukkan istilah pencarian Anda: {RESET}\n", interval=0.01)
     search_query = input(f"{WHITE}")
 
-    slow_print(f"{WHITE}🔍 Поиск...\n", interval=0.01)
+    slow_print(f"{WHITE}🔍 Mencari...\n", interval=0.01)
     search_in_base_folder(search_query)
 
 if __name__ == '__main__':
