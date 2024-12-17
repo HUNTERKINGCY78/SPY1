@@ -37,7 +37,7 @@ banner = '''
 '''
 print (Colorate.Vertical(Colors.green_to_cyan, banner, 2))
 
-choice = Write.Input("[+] Введите номер -> ", Colors.green_to_cyan, interval=0.005)
+choice = Write.Input("[+] Masukkan nomor -> ", Colors.green_to_cyan, interval=0.005)
 
 if choice == "0":
     os.system("python phone.py")
@@ -76,7 +76,7 @@ elif choice == "01":
 elif choice == "02":
     os.system("python snos.py")
 elif choice == "04":
-    print("Создатель @Felix_335, подпишись на его канал @FELIXSOFTOOL ёпта!")
+    print ("Dibuat oleh @CY78 PROEJCT, berlangganan salurannya @CY78!")
 elif choice == "07":
     os.system("python banvord.py")
 
