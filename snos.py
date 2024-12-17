@@ -1,40 +1,40 @@
 def main():
-    print("Выберите категорию нарушения:")
-    print("1. Доксинг")
-    print("2. Троллинг")
-    print("3. Деанон")
-    print("4. Мошенничество")
-    print("5. Живодер")
+    print ("Pilih kategori pelanggaran:")
+    print ("1. Penyebaran informasi pribadi")
+    print ("2. trolling")
+    print ("3. Dekanon")
+    print ("4. Tipuan")
+    print ("5. pemain")
 
     choice = input("Введите номер категории: ")
 
     categories = {
-        '1': 'Доксинг',
-        '2': 'Троллинг',
-        '3': 'Деанон',
-        '4': 'Мошенничество',
-        '5': 'Живодер'
+        '1': 'Penyebaran informasi pribadi',
+        '2': 'trolling',
+        '3': 'Dekanon',
+        '4': 'Tipuan',
+        '5': 'pemain'
     }
 
     if choice not in categories:
-        print("Неверный выбор. Попробуйте снова.")
+        print ("Pilihan yang salah.  Coba lagi.")
         return
 
-    print(f"Вы выбрали: {categories[choice]}")
+    print (f"Anda telah memilih: {categories[choice]}")
 
-    user_id = input("Введите ID: ")
-    username = input("Введите юзернейм: ")
-    violation_link = input("Введите ссылку на нарушение: ")
+    user_id = input("Masukkan ID: ")
+    username = input("Masukkan nama pengguna: ")
+    violation_link = input("Masukkan tautan ke pelanggaran: ")
 
-    message = f"Категория: {categories[choice]}\n"
+    message = f"Kategori: {categories[choice]}\n"
     message += f"ID: {user_id}\n"
-    message += f"Юзернейм: {username}\n"
-    message += f"Ссылка на нарушение: {violation_link}"
+    message += f"Nama belakang: {username}\n"
+    message += f"Tautan ke pelanggaran: {violation_link}"
 
     email = "abuse@telegram.org"
 
-    print(f"\nОтправлено на почту {email}")
-    print(f"Отправленное сообщение:\n{message}")
+    print (f"\nDikirim melalui email {email}")
+    print (f"Pesan terkirim:\n{message}")
 
 if __name__ == "__main__":
     main()
